@@ -1,0 +1,32 @@
+{
+  "name": "pokemonapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node src/index.ts",
+    "start:dev": "ts-node-dev src/index.ts",
+    "start:prod": "node dist/index.js",
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saverioscagnoli/PokemonAPI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saverioscagnoli/PokemonAPI/issues"
+  },
+  "homepage": "https://github.com/saverioscagnoli/PokemonAPI#readme",
+  "dependencies": {
+    "@types/node": "^18.0.0",
+    "pokenode-ts": "^1.14.0",
+    "ts-node": "^10.8.1",
+    "tslib": "^2.4.0",
+    "typescript": "^4.7.3"
+  }
+}
