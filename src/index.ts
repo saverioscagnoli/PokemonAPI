@@ -8,7 +8,7 @@ import { sAbility } from "./utils";
 const api = new PokemonClient();
 const evoApi = new EvolutionClient();
 
-async function start() {
+async function writeAllPokemons() {
   await getAllAbilities();
   await getAllMoves();
   for (let i = 1; i <= 898; i++) {
@@ -140,4 +140,4 @@ async function start() {
   }
 }
 
-start();
+getAllAbilities();
