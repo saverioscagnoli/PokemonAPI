@@ -140,4 +140,4 @@ async function writeAllPokemons() {
   }
 }
 
-getAllAbilities();
+getAllMoves();

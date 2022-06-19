@@ -1,3 +1,4 @@
+import { writeFile } from "fs";
 import { MoveClient, PokemonClient } from "pokenode-ts";
 import { Move } from "../interfaces/move";
 
@@ -78,9 +79,11 @@ async function getAllMoves() {
         fetch.meta.ailment.name;
     }
     Moves.push(move);
-    console.log(`Moves: ${i}`);
+    writeFile(`${move.name}.json`, JSON.stringify(move), (e) => {
+      if (e) throw e;
+      else console.log(`${move.name}.json written`);
+    })
   }
-  console.log("Moves Done!");
   return Moves;
 }
 
