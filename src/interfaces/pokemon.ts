@@ -54,6 +54,12 @@ interface IPokemonData {
   is_mythic: boolean;
 }
 
+interface ILearnedMoves {
+  name: string;
+  level?: number;
+  TM?: boolean;
+}
+
 interface IPokemon {
   name: string;
   types: string[];
@@ -64,7 +70,7 @@ interface IPokemon {
   data: IPokemonData;
   evolution_chain: IPokemonChain[];
   generation: string;
-  learned_moves: string[];
+  learned_moves: ILearnedMoves[];
 }
 
 class Pokemon implements IPokemon {
@@ -77,7 +83,7 @@ class Pokemon implements IPokemon {
   data: IPokemonData;
   evolution_chain: IPokemonChain[];
   generation: string;
-  learned_moves: string[];
+  learned_moves: ILearnedMoves[];
   constructor(
     name: string,
     types: string[],
@@ -87,7 +93,7 @@ class Pokemon implements IPokemon {
     generation: string,
     abilities: IPokemonAbility[],
     evolution_chain: IPokemonChain[],
-    learned_moves: string[],
+    learned_moves: ILearnedMoves[],
     gender_ratio: IPokemonGenderRatio
   ) {
     this.name = name;

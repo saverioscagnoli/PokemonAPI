@@ -121,7 +121,15 @@ async function start() {
       }
     }
     for (let i = 0; i < data.moves.length; i++) {
-      pokemon.learned_moves.push(data.moves[i].move.name);
+      pokemon.learned_moves.push({
+        name: data.moves[i].move.name,
+        level: data.moves[i].version_group_details[0].level_learned_at,
+        TM:
+          data.moves[i].version_group_details[0].move_learn_method.name ==
+          "machine"
+            ? true
+            : false,
+      });
     }
     writeFile(`${pokemon.name}.json`, JSON.stringify(pokemon), (e) => {
       if (e) throw e;
