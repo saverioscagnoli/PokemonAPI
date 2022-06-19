@@ -79,10 +79,11 @@ async function getAllMoves() {
         fetch.meta.ailment.name;
     }
     Moves.push(move);
-    writeFile(`${move.name}.json`, JSON.stringify(move), (e) => {
+    /*     writeFile(`${i}.json`, JSON.stringify(move), (e) => {
       if (e) throw e;
-      else console.log(`${move.name}.json written`);
-    })
+      else console.log(`${i}.json written`);
+    }) */
+    console.log(`${i} moves fetched`);
   }
   return Moves;
 }

@@ -1,0 +1,1 @@
+{"name":"wrap","type":"normal","category":"physical","in_fight":{"base_pp":20,"power":15,"accuracy":90,"priority":0,"crit_rate":0,"healing":0,"effect_chance":100,"multistrike":{"min_hits":null,"max_hits":null},"multiturn":{"min_turns":5,"max_turns":6},"stats_changes":[],"status_changes":{"status":null},"additional_effects":{"stats_changes":[],"status_changes":{"status":null}}}}

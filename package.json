@@ -8,6 +8,7 @@
     "start": "ts-node src/index.ts",
     "start:dev": "ts-node-dev src/index.ts",
     "start:prod": "node dist/index.js",
+    "start:npm": "ts-node pokemonAPI_npm/index.ts",
     "build": "tsc",
     "watch": "tsc -w"
   },
@@ -16,7 +17,7 @@
     "url": "git+https://github.com/saverioscagnoli/PokemonAPI.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Saverio",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/saverioscagnoli/PokemonAPI/issues"

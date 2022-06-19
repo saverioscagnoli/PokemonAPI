@@ -19,10 +19,11 @@ async function getAllAbilities() {
       data.generation.name.split("-")[1]
     );
     Abilities.push(ability);
-    writeFile(`${ability.name}.json`, JSON.stringify(ability), (e) => {
+    /* writeFile(`${i}.json`, JSON.stringify(ability), (e) => {
       if (e) throw e;
-      else console.log(`${ability.name}.json written`);
-    });
+      else console.log(`${i}.json written`);
+    }); */
+    console.log(`${i} abilities written`);
   }
   return Abilities;
 }
