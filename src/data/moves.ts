@@ -5,7 +5,7 @@ const api = new MoveClient();
 const Moves: Move[] = [];
 
 async function getAllMoves() {
-  for (let i = 1; i <= 20; i++) {
+  for (let i = 1; i <= 826; i++) {
     const fetch = await api.getMoveById(i);
     const move = new Move(
       fetch.name,
@@ -78,8 +78,9 @@ async function getAllMoves() {
         fetch.meta.ailment.name;
     }
     Moves.push(move);
-    console.log(i);
+    console.log(`Moves: ${i}`);
   }
+  console.log("Moves Done!");
   return Moves;
 }
 

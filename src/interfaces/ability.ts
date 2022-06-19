@@ -1,23 +1,3 @@
-interface IChanges {
-  stat?: {
-    changed: string;
-    modifier: number;
-  }[];
-  terrain?: string;
-  weather?: string;
-}
-
-interface IAbility {
-  name: string;
-  description: string;
-  requirement?: {
-    description: string | undefined;
-    terrain?: string;
-    weather?: string;
-  };
-  changes?: IChanges;
-}
-
 class Ability {
   name: string;
   descriprion: string;
@@ -36,4 +16,4 @@ class Ability {
   }
 }
 
-export { IChanges, IAbility, Ability };
+export { Ability };

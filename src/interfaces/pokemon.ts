@@ -3,7 +3,6 @@ import { Ability } from "./ability";
 interface IPokemonAbility {
   ability: Ability;
   hidden: boolean;
-  mega_only?: boolean;
 }
 
 interface IPokemonGenderRatio {
@@ -24,21 +23,26 @@ interface IPokemonBaseStats {
 interface IPokemonEvolution {
   name: string;
   mode: {
-    type: string;
-    level?: number;
-    stone?: string;
-    trade?: boolean;
-    held_item?: string;
-    happiness?: number;
-    time?: "day" | "night" | "sunset";
-    location?: string;
+    type: string | null;
+    level?: number | null;
+    gender?: string | null;
+    stone?: string | null;
+    trade?: boolean | null;
+    held_item?: string | null;
+    move?: string | null;
+    happiness?: number | null;
+    affection?: number | null;
+    needs_rain?: boolean | null;
+    beauty?: number | null;
+    time?: "Day" | "Night" | "" | null;
+    location?: string | null;
   };
 }
 
 interface IPokemonChain {
   base_form: string;
-  first_evolution: IPokemonEvolution;
-  second_evolution?: IPokemonEvolution;
+  first_evolution: IPokemonEvolution | null;
+  second_evolution?: IPokemonEvolution | null;
 }
 
 interface IPokemonData {
@@ -46,6 +50,8 @@ interface IPokemonData {
   weight: number;
   height: number;
   pokedex_color: string;
+  is_legendary: boolean;
+  is_mythic: boolean;
 }
 
 interface IPokemon {
@@ -57,7 +63,7 @@ interface IPokemon {
   base_stats: IPokemonBaseStats;
   data: IPokemonData;
   evolution_chain: IPokemonChain[];
-  generation: number;
+  generation: string;
   learned_moves: string[];
 }
 
@@ -70,30 +76,30 @@ class Pokemon implements IPokemon {
   base_stats: IPokemonBaseStats;
   data: IPokemonData;
   evolution_chain: IPokemonChain[];
-  generation: number;
+  generation: string;
   learned_moves: string[];
   constructor(
     name: string,
     types: string[],
     index: number,
-    abilities: IPokemonAbility[],
-    gender_ratio: IPokemonGenderRatio,
     base_stats: IPokemonBaseStats,
     data: IPokemonData,
+    generation: string,
+    abilities: IPokemonAbility[],
     evolution_chain: IPokemonChain[],
-    generation: number,
-    learned_moves: string[]
+    learned_moves: string[],
+    gender_ratio: IPokemonGenderRatio
   ) {
     this.name = name;
     this.types = types;
     this.index = index;
-    this.abilities = abilities;
-    this.gender_ratio = gender_ratio;
     this.base_stats = base_stats;
     this.data = data;
-    this.evolution_chain = evolution_chain;
     this.generation = generation;
+    this.abilities = abilities;
+    this.evolution_chain = evolution_chain;
     this.learned_moves = learned_moves;
+    this.gender_ratio = gender_ratio;
   }
 }
 

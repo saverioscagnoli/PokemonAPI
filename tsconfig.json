@@ -12,7 +12,8 @@
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
-    "importHelpers": true
+    "importHelpers": true,
+    "strictNullChecks": false
   },
   "include": ["src"],
   "exclude": ["node_modules", "**/*.spec.ts"]
