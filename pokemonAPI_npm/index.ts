@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Ability } from "./ability";
 import { Pokemon } from "./pokemon";
 
 export const pokemonAPI = {
@@ -18,4 +19,32 @@ export const pokemonAPI = {
       throw e;
     }
   },
+  async getAbility(name?: string, id?: number): Promise<Ability> {
+    try {
+      const request = await axios(
+        `https://saverioscagnoli.github.io/PokemonAPI/ability/${
+          name ? name : id
+        }.json`
+      );
+      const ability: Ability = request.data;
+      return ability;
+    } catch (e) {
+      throw e;
+    }
+  },
+  async getMove(name?: string, id?: number): Promise<Ability> {
+    try {
+      const request = await axios(
+        `https://saverioscagnoli.github.io/PokemonAPI/move/${
+          name ? name : id
+        }.json`
+      );
+      const ability: Ability = request.data;
+      return ability;
+    } catch (e) {
+      throw e;
+    }
+  },
 };
+
+

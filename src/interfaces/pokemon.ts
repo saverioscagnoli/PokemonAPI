@@ -71,6 +71,7 @@ interface IPokemon {
   evolution_chain: IPokemonChain[];
   generation: string;
   learned_moves: ILearnedMoves[];
+  sprite: string;
 }
 
 class Pokemon implements IPokemon {
@@ -84,6 +85,7 @@ class Pokemon implements IPokemon {
   evolution_chain: IPokemonChain[];
   generation: string;
   learned_moves: ILearnedMoves[];
+  sprite: string;
   constructor(
     name: string,
     types: string[],
@@ -94,7 +96,8 @@ class Pokemon implements IPokemon {
     abilities: IPokemonAbility[],
     evolution_chain: IPokemonChain[],
     learned_moves: ILearnedMoves[],
-    gender_ratio: IPokemonGenderRatio
+    gender_ratio: IPokemonGenderRatio,
+    sprite: string
   ) {
     this.name = name;
     this.types = types;
@@ -106,6 +109,7 @@ class Pokemon implements IPokemon {
     this.evolution_chain = evolution_chain;
     this.learned_moves = learned_moves;
     this.gender_ratio = gender_ratio;
+    this.sprite = sprite;
   }
 }
 
