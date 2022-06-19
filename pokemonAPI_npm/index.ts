@@ -1,8 +1,7 @@
 import axios from "axios";
 import { Ability } from "./ability";
 import { Pokemon } from "./pokemon";
-
-export const pokemonAPI = {
+const pokemonAPI = {
   async getPokemon(name?: string, id?: number): Promise<Pokemon> {
     if (!name && !id) {
       throw new Error("You must provide a Pokémon name or Pokémon ID.");
@@ -47,4 +46,4 @@ export const pokemonAPI = {
   },
 };
 
-
+export { pokemonAPI, Pokemon, Ability };
